@@ -11,7 +11,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    
+    {{-- menu navegacion --}}
 @include('partials.menu') <!-- Aquí se carga tu menú en todas las páginas -->
 
 <!-- Imagen de fondo -->

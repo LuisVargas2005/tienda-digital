@@ -4,7 +4,9 @@
         <!-- Logo y navegación -->
         <div class="flex-1 flex justify-center space-x-6">
             <div class="flex space-x-6 items-center">
-            <a href="<?php echo e(url('./app/index')); ?>" class="text-indigo-600 font-semibold border-b-2 border-indigo-600 pb-1">inicio</a>
+            <a href="/admin" title="Iniciar sesión como administrador">
+            <img src="https://i.pravatar.cc/32" alt="Avatar" class="h-8 w-8 rounded-full cursor-pointer hover:opacity-80" />
+            </a>
             <a href="<?php echo e(url('/contacto')); ?>" class="text-gray-600 hover:text-indigo-600">Contactanos</a>
             <a href="<?php echo e(url('/manual')); ?>" class="text-gray-600 hover:text-indigo-600">Manuela</a>
 
