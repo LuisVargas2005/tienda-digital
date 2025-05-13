@@ -4,9 +4,7 @@
         <!-- Logo y navegación -->
         <div class="flex-1 flex justify-center space-x-6">
             <div class="flex space-x-6 items-center">
-            <a href="/admin" title="Iniciar sesión como administrador">
-            <img src="https://i.pravatar.cc/32" alt="Avatar" class="h-8 w-8 rounded-full cursor-pointer hover:opacity-80" />
-            <a href="{{ url('/index') }}" class="text-gray-600 hover:text-indigo-600">inicio</a>
+            <a href="{{ url('/') }}" class="text-gray-600 hover:text-indigo-600">Inicio</a>
             <a href="{{ url('/contacto') }}" class="text-gray-600 hover:text-indigo-600">Contactanos</a>
             <a href="{{ url('/manual') }}" class="text-gray-600 hover:text-indigo-600">Manuela</a>
 
@@ -34,8 +32,6 @@
         </button>
 
         <!-- Login Link -->
-        <a href="/login" class="text-sm text-indigo-600 font-semibold hover:text-indigo-800 transition">
-            Iniciar sesión
-        </a>
+        <a href="{{ route('filament.dashboard.auth.login') }}" title="Iniciar sesión como administrador" class="text-gray-600 hover:text-indigo-600">Iniciar sesión</a>
         </div>
         </nav>
