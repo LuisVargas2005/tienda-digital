@@ -15,6 +15,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ImageColumn;
 
 
 
@@ -47,7 +49,7 @@ class ProductResource extends Resource
             ->prefix('$')
             ->numeric(),
 
-        FileUpload::make(name: 'image')
+        FileUpload::make(name: 'image_url')
             ->label(label: 'Imagen')
             ->required()
             ->placeholder(placeholder: 'Imagen del producto')
@@ -60,18 +62,18 @@ class ProductResource extends Resource
             ->relationship(name: 'category', titleAttribute: 'name')
             ->placeholder(placeholder: 'Seleccione una categoría'),
     
-            TextInput::make(name: 'minimum_stock')
-                ->label(label: 'Stock Mínimo')
-                ->required()
-                ->numeric()
-                ->placeholder('Cantidad mínima en stock'),
+        TextInput::make(name: 'minimum_stock')
+            ->label(label: 'Stock Mínimo')
+            ->required()
+            ->numeric()
+            ->placeholder('Cantidad mínima en stock'),
 
-            Select::make(name: 'state')
-                ->label(label: 'Estado')
-                ->required()
-                ->options([
-                    '1' => 'Activo',
-                    '0' => 'Inactivo',
+        Select::make(name: 'state')
+            ->label(label: 'Estado')
+            ->required()
+            ->options([
+                '1' => 'Activo',
+                '0' => 'Inactivo',
                 ])
                 ->placeholder('Seleccione el estado'),
     ]);
@@ -81,9 +83,47 @@ class ProductResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->columns([
-                //
-            ])
+            ->columns(components: [
+        TextColumn::make(name: 'name')
+            ->label(label: 'Nombre')
+            ->searchable()
+            ->sortable(),
+
+        TextColumn::make(name: 'description')
+            ->label(label: 'Descripción')
+            ->searchable()
+            ->sortable(),
+
+        TextColumn::make(name: 'price')
+            ->label(label: 'Precio')
+            ->searchable()
+            ->prefix(prefix: '$')
+            ->formatStateUsing(callback: function (string $state): string {
+                return number_format(num: $state, decimals: 2, decimal_separator: ',', thousands_separator: '.');
+            })
+            ->sortable(),
+
+        TextColumn::make(name: 'category.name')
+            ->label(label: 'Categoría')
+            ->searchable()
+            ->sortable(),
+
+        ImageColumn::make(name: 'image_url')
+            ->label(label: 'Imagen')
+            ->sortable(),
+
+        TextColumn::make('minimum_stock')
+            ->label('Stock Mínimo')
+            ->sortable(),
+
+        TextColumn::make('state')
+            ->label('Estado')
+            ->formatStateUsing(function (string $state): string {
+            return $state === '1' ? 'Activo' : 'Inactivo';
+        })
+        ->sortable(),
+    ])
+
             ->filters([
                 //
             ])
