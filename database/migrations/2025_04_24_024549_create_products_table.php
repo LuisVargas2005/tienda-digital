@@ -20,8 +20,9 @@ return new class extends Migration
             $table->decimal('price', 10, 2);
             $table->string('image_url');
             $table->unsignedBigInteger('category_id')->nullable();
+            $table->integer('minimum_stock')->nullable();
+            $table->tinyInteger('state')->nullable();
             $table->timestamps();
-
             // Definir la relación con la tabla categories (si existe)
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
         });
