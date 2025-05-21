@@ -3,17 +3,14 @@
 /* Sección de búsqueda */
 .search-section {
     padding: 20px;
+    text-align: center;
     background-color: #f8f9fa;
-}
-
-.search-section h2 {
-    position: relative;
-    left: 0;
-    bottom: 13px;
 }
 
 .search-form {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
     margin-bottom: 20px;
 }
@@ -61,5 +58,3 @@
     color: #28a745;
     font-weight: bold;
 }
-
-

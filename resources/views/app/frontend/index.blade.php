@@ -33,7 +33,7 @@
             <!-- Contenedor 1 -->
 
             <div class="bg-white rounded-2xl shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300 p-8 ">
-                <h2 class="text-2xl font-bold mb-4 text-indigo-700">Catálogo de Productos</h2>
+                <h2 class="text-2xl font-bold mb-4 text-indigo-700">CATALOGO DE PRODUCTOS</h2>
                 <p class="text-gray-600 mb-6">Explora una amplia gama de productos seleccionados especialmente para ti.</p>
                 <a href="{{ url('/catalogo') }}" class="inline-block bg-indigo-600 text-white px-5 py-3 rounded-lg hover:bg-indigo-700 transition">Ir al catálogo</a>
             </div>
@@ -41,9 +41,9 @@
             <!-- Contenedor 2 -->
 
             <div class="bg-white rounded-2xl shadow-lg transform hover:scale-105 hover:shadow-2xl transition duration-300 p-8">
-                <h2 class="text-2xl font-bold mb-4 text-indigo-700">Contáctanos</h2>
+                <h2 class="text-2xl font-bold mb-4 text-indigo-700">AGENDAS</h2>
                 <p class="text-gray-600 mb-6">¿Tienes preguntas? Nuestro equipo está listo para ayudarte en lo que necesites.</p>
-                <a href="{{ url('/agendar') }}" class="inline-block bg-indigo-600 text-white px-5 py-3 rounded-lg hover:bg-indigo-700 transition">Ir a Agendas</a>
+                <a href="{{ route('agendar.paso1') }}" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">Ir a Agendas</a>
             </div>
 
         </div>
