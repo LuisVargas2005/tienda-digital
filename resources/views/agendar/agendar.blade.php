@@ -80,7 +80,8 @@
                         <li><strong>Email:</strong> {{ session('email') }}</li>
                         <li><strong>Preferencia:</strong> {{ session('preferencia') }}</li>
                     </ul>
-                    <a href="{{ route('agendar.paso1') }}" class="px-4 py-2 bg-gray-400 text-white rounded">Volver al inicio</a>
+                    <a href="{{ url('/') }}" class="px-4 py-2 bg-gray-400 text-white rounded">Volver al inicio</a>
+
                 </div>
             @endif
         @endisset

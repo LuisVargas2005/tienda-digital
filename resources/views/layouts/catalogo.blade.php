@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./assets/css/catalogo.css">
+    <link rel="stylesheet" href="{{ asset(path: 'assets/css/catalogo.css') }}">
     <title>Catalogo</title>
 </head>
 <body>
@@ -12,6 +12,7 @@
     @include('partials.menu') <!-- Aquí se carga tu menú en todas las páginas -->
 
 <!-- Sección de búsqueda -->
+<div class="mt-14">
     <section class="search-section">
         <h2>Busca un producto</h2>
         <form class="search-form">
@@ -23,12 +24,17 @@
             </select>
         </form>
     </section>
+</div>
 
 <!-- Aquí puedes agregar más contenido relacionado con el catálogo -->
 
+@yield('content')
+
+{{-- producto 1 --}}
+<div class="product-card">
     <div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ">
         <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300transform hover:scale-105 hover:shadow-2xl transition duration-300">
-            <img src="./assets/img/Camisa.jpg" alt="Producto 1" class="w-full h-96 object-cover">
+            <img src="{{ asset('assets/img/Camisa.jpg') }} alt="Producto 1" class="w-full h-96 object-cover">
             <div class="p-4">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">Earthen Bottle</h3>
                 <p class="text-sm text-gray-600 mb-2">Botella de cerámica artesanal</p>
@@ -37,7 +43,7 @@
         </div>
 
         <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300">
-            <img src="./assets/img/Bermudas1.jpeg" alt="Producto 2" class="w-full h-96 object-cover">
+            <img src="{{ asset('assets/img/Bermudas1.jpeg') }} alt="Producto 2" class="w-full h-96 object-cover">
             <div class="p-4">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">Nomad Tumbler</h3>
                 <p class="text-sm text-gray-600 mb-2">Vaso térmico portátil</p>
@@ -46,7 +52,7 @@
         </div>
 
         <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300">
-            <img src="./assets/img/Camisa1.webp" alt="Producto 3" class="w-full h-96 object-cover">
+            <img src="{{ asset('assets/img/Camisa1.webp') }} alt="Producto 3" class="w-full h-96 object-cover">
             <div class="p-4">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">Focus Paper Refill</h3>
                 <p class="text-sm text-gray-600 mb-2">Recambio de papel para agenda</p>
@@ -55,7 +61,7 @@
         </div>
 
         <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300">
-            <img src="./assets/img/camisa2.webp" alt="Producto 4" class="w-full h-96 object-cover">
+            <img src="{{ asset('assets/img/Camisa2.webp') }} alt="Producto 4" class="w-full h-96 object-cover">
             <div class="p-4">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">Machined Mechanical Pencil</h3>
                 <p class="text-sm text-gray-600 mb-2">Lápiz mecánico de precisión</p>
@@ -64,7 +70,7 @@
         </div>
 
         <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300">
-            <img src="./assets/img/camisa3.jpg" alt="Producto 5" class="w-full h-96 object-cover">
+            <img src="{{ asset('assets/img/Camisa3.jpg"') }} alt="Producto 5" class="w-full h-96 object-cover">
             <div class="p-4">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">Focus Card Tray</h3>
                 <p class="text-sm text-gray-600 mb-2">Organizador de tarjetas de escritorio</p>
@@ -73,7 +79,7 @@
         </div>
 
         <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300">
-            <img src="./assets/img/Camisa4.jpg" alt="Producto 6" class="w-full h-96 object-cover">
+            <img src="{{ asset('assets/img/Camisa4.jpg"') }} alt="Producto 6" class="w-full h-96 object-cover">
             <div class="p-4">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">Focus Multi-Pack</h3>
                 <p class="text-sm text-gray-600 mb-2">Paquete múltiple de accesorios</p>
@@ -82,7 +88,7 @@
         </div>
 
         <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300">
-            <img src="./assets/img/Pantalonetas1.jpg" alt="Producto 7" class="w-full h-96 object-cover">
+            <img src="{{ asset('assets/img/Pantalonetas1.jpg"') }} alt="Producto 7" class="w-full h-96 object-cover">
             <div class="p-4">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">Brass Scissors</h3>
                 <p class="text-sm text-gray-600 mb-2">Tijeras de latón decorativas</p>
@@ -91,7 +97,7 @@
         </div>
 
         <div class="bg-white rounded-lg shadow-md overflow-hiddentransform hover:scale-105 hover:shadow-2xl transition duration-300">
-            <img src="./assets/img/Pantalonetas2.jpg" alt="Producto 8" class="w-full h-96 object-cover">
+            <img src="{{ asset('assets/img/Pantalonetas2.jpg"') }} alt="Producto 8" class="w-full h-96 object-cover">
             <div class="p-4">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">Focus Carry Pouch</h3>
                 <p class="text-sm text-gray-600 mb-2">Funda de transporte multiusos</p>
